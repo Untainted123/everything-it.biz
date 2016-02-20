@@ -1,19 +1,31 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<head>
 
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "The Middleman" %></title>
+  <%= partial "head-contents" %>
+  
+</head>
 
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
-  </head>
+<body>
 
-  <body class="<%= page_classes %>">
-    <%= yield %>
-  </body>
+  <%= partial "navigation" %>
+  <%= partial "header" %>
+
+
+<%= yield %>
+
+<%= partial "footer" %>
+
+<!-- jQuery -->
+<script src="javascripts/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="javascripts/bootstrap.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<%= partial "scripts" %>
+
+</body>
+
 </html>

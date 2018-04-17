@@ -46,6 +46,9 @@
       <a href='#top' onclick = $('#menu-close').click(); >Home</a>
     </li>
     <li>
+      <a href='#products' onclick = $('#menu-close').click(); >Products</a>
+    </li>
+    <li>
       <a href='#services' onclick = $('#menu-close').click(); >Upcoming</a>
     </li>
     <li>
@@ -64,14 +67,24 @@
 <header id='top' class='header'>
   <div class='text-vertical-center'>
     <h1>Walk In Faith</h1>
-    <h3>Walk in Faith will help guide you in your daily life to learn how to receive what God has for you</h3>
     <br>
+    <!-- Top Video block (has different defaults and a larger play button to entice them to play)-->
     <div align="center" class="embed-responsive embed-responsive-4by3 col-lg-4 offset-lg-4 video-wrapper">
-      <video id='what-is-this-video' class="embed-responsive-item">
+      <video id='what-is-this-video' class="embed-responsive-item" poster="/images/poster-video1.jpg">
         <source src="http://www.creationseminar.net/videofileswalkinfaithwhatisit/What is This Ministry.mp4" type="video/mp4">
         Your browser doesn't support the HTML5 video tag.
       </video>
-      </div>
+    </div>
+    <!-- /Video block -->
+    <!-- Video block -->
+    <p></p>
+    <div align="center" class="embed-responsive embed-responsive-4by3 col-lg-4 offset-lg-4 video-wrapper">
+      <video id='another-unique-name' controls class="embed-responsive-item" poster="/images/poster-video2.jpg">
+        <source src="http://www.creationseminar.net/videofileswalkinfaithwhatisit/What is This Ministry.mp4" type="video/mp4">
+        Your browser doesn't support the HTML5 video tag.
+      </video>
+    </div>
+    <!-- /Video block -->
     <a href='#about' class='btn btn-dark btn-lg mt-3'>Find Out More</a>
   </div>
 </header>
@@ -94,10 +107,10 @@
     </div>
     <!-- /.row -->
     <div class='row'>
-      <div class='col jumbotron text-sm-center'>
+      <div class='col jumbotron text-sm-center text-md-left'>
         <h4>Thank you for your interest in this ministry. Countless hours are spent with 
           hurting individuals at no charge. Your continued financial support of this 
-          ministry through future <a href='http://www.creationseminar.net/onlineorders.htm'>donations</a> is greatly appreciated.
+          ministry through future <a href='https://creationseminar.net/onlineorders.htm'>donations</a> is greatly appreciated.
         </h4>
         <ul class='list-unstyled text-center'>
           <li><i class='fas fa-phone'></i> <i class='fas fa-comment'></i> Call or text us at (603) 616-8907</li>
@@ -114,9 +127,23 @@
   </div>
   <!-- /.container -->
 </section>
+<!-- Appeal to sign up -->
+<section id="products">
+<div class="container">
+<div class="row text-center">
+    <div class="col">
+      <marquee><h2>Want to order Walk in Faith Resources?<h2></marquee>
+      <h5>Go to the Walk in Faith <a href="wif_products1.htm">Products Page</a></h5>
+      <br/>
+      <h5>Learn about or register for an upcoming <a href="aed_workshop.htm"> Allergies and Eating Disorders Workshop</a></h5>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- Upcoming Services -->
 <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-<section id='services' class='services bg-primary'>
+<section id='services' class='services'>
   <div class='container'>
     <div class='row text-center'>
       <div class='col'>
@@ -403,10 +430,10 @@
     <!--End Testimony Block-->
     <div class='row'><div class='col'><hr/></div></div>
      <div class='row'>
-      <div class='col jumbotron text-sm-center'>
+      <div class='col jumbotron text-sm-center text-md-left'>
         <h4>Thank you for your interest in this ministry. Countless hours are spent with 
           hurting individuals at no charge. Your continued financial support of this 
-          ministry through future <a href='http://www.creationseminar.net/onlineorders.htm'>donations</a> is greatly appreciated.
+          ministry through future <a href='https://creationseminar.net/onlineorders.htm'>donations</a> is greatly appreciated.
         </h4>
       </div>
     </div>
@@ -486,7 +513,7 @@ var videoPlayButton,
         renderVideoPlayButton: function() {
             if (videoWrapper.contains(video)) {
 				this.formatVideoPlayButton()
-                video.classList.add('has-media-controls-hidden')
+                $(video).addClass('has-media-controls-hidden')
                 videoPlayButton = document.getElementsByClassName('video-overlay-play-button')[0]
                 videoPlayButton.addEventListener('click', this.hideVideoPlayButton)
             }
@@ -503,8 +530,8 @@ var videoPlayButton,
 
         hideVideoPlayButton: function() {
             video.play()
-            videoPlayButton.classList.add('is-hidden')
-            video.classList.remove('has-media-controls-hidden')
+            $(videoPlayButton).addClass('is-hidden');
+            $(video).removeClass('has-media-controls-hidden')
             video.setAttribute('controls', 'controls')
         }
 	}

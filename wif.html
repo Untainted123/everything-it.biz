@@ -71,7 +71,13 @@
   <div class='text-vertical-center'>
     <h1>Walk In Faith</h1>
     <br>
-    <!-- Top Video block (has different defaults and a larger play button to entice them to play)-->
+    <!-- Video block -->
+    <div align="center" class="embed-responsive embed-responsive-4by3 col-lg-4 offset-lg-4 video-wrapper">
+        <iframe src="https://www.youtube.com/embed/VtmCWAJ7bLs?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <!-- /Video block -->
+    <p></p>
+    <!-- Local Video block (has different defaults and a larger play button to entice them to play)-->
     <div align="center" class="embed-responsive embed-responsive-4by3 col-lg-4 offset-lg-4 video-wrapper">
       <video id='what-is-this-video' class="embed-responsive-item" poster="/images/poster-video1.jpg">
         <source src="http://www.creationseminar.net/videofileswalkinfaithwhatisit/What is This Ministry.mp4" type="video/mp4">
@@ -80,17 +86,7 @@
     </div>
     <!-- /Video block -->
     
-    <!-- Video block -->
-    <!--
-    <p></p>
-    <div align="center" class="embed-responsive embed-responsive-4by3 col-lg-4 offset-lg-4 video-wrapper">
-      <video id='another-unique-name' controls class="embed-responsive-item" poster="/images/poster-video2.jpg">
-        <source src="http://www.creationseminar.net/videofileswalkinfaithwhatisit/What is This Ministry.mp4" type="video/mp4">
-        Your browser doesn't support the HTML5 video tag.
-      </video>
-    </div>
-    -->
-    <!-- /Video block -->
+
     <a href='#about' class='btn btn-dark btn-lg mt-3'>Find Out More</a>
   </div>
 </header>
@@ -157,7 +153,7 @@
         <div class="col">
           <div class="service-item">
 
-              <img width="160" height="107" src="/images/WIF_dvd.jpg" />
+              <img src="/images/WIF_dvd.jpg" />
 
               <h4>
                 <strong>Walk in Faith DVD Series</strong>
@@ -171,7 +167,7 @@
         <div class="col">
           <div class="service-item">
 
-            <img width="160" height="107" src="/images/WIF_cd.jpg" />
+            <img src="/images/WIF_cd.jpg" />
 
             <h4>
               <strong>Walk in Faith CD Series</strong>
@@ -185,7 +181,7 @@
         <div class="col">
           <div class="service-item">
 
-            <img width="160" height="107" src="/images/WIF_dvd.jpg" />
+            <img src="/images/WIF_dvd.jpg" />
 
             <h4>
               <strong>Walk in Faith Workshop DVD Series</strong>
@@ -201,7 +197,7 @@
         <div class="col">
           <div class="service-item">
 
-            <img width="160" height="107" src="/images/study_guide.jpg" />
+            <img src="/images/study_guide.jpg" />
 
             <h4>
               <strong>Study Guide</strong>
@@ -215,7 +211,7 @@
         <div class="col">
           <div class="service-item">
 
-            <img width="160" height="107" src="/images/DSC_7635_srg_web.jpg" />
+            <img src="/images/DSC_7635_srg_web.jpg" />
 
             <h4>
               <strong>Scripture Reference Guide</strong>
@@ -229,7 +225,7 @@
         <div class="col">
           <div class="service-item">
 
-            <img width="160" height="107" src="/images/WIF_Vase.jpg" />
+            <img src="/images/WIF_Vase.jpg" />
 
             <h4>
               <strong>Workshop Workbook</strong>
@@ -245,7 +241,7 @@
         <div class="col">
           <div class="service-item">
 
-            <img width="160" height="107" src="/images/WIF_shirt.jpg" />
+            <img src="/images/WIF_shirt.jpg" />
 
             <h4>
               <strong>Long Sleeve T-Shirt</strong>
@@ -303,7 +299,7 @@
         <div class='row'>
           <div class='col'>
             <div class='service-item'>
-              <img width="320" height="214" class="img-fluid" src="/images/The Dalles WORKSHOP.jpg" />
+              <img width="320" height="214" class="img-fluid" src="/images/TheDallesWORKSHOP.jpg" />
             </div>
           </div>
         </div>
@@ -312,7 +308,7 @@
         <div class='row'>
           <div class='col'>
             <div class='service-item'>
-              <img width="320" height="214" class="img-fluid" src="/images/Tucson AED.jpg" />
+              <img width="320" height="214" class="img-fluid" src="/images/TucsonAED.jpg" />
             </div>
           </div>
         </div>
@@ -321,7 +317,7 @@
         <div class='row'>
           <div class='col'>
             <div class='service-item'>
-              <img width="320" height="214" class="img-fluid" src="/images/Slidell WIF.jpg" />
+              <img width="320" height="214" class="img-fluid" src="/images/SlidellWIF.jpg" />
               <!-- <h4>
                 <strong>Somewhere, TX</strong>
               </h4>
@@ -657,8 +653,8 @@ $(function() {
 //Video player JS
 $(function() {
 var videoPlayButton,
-	videoWrapper = document.getElementsByClassName('video-wrapper')[0],
-    video = document.getElementsByTagName('video')[0],
+	videoWrapper = document.getElementsByClassName('video-wrapper')[1],
+    video = document.getElementById('what-is-this-video'),
     videoMethods = {
         renderVideoPlayButton: function() {
             if (videoWrapper.contains(video)) {
